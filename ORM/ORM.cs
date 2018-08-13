@@ -4,11 +4,12 @@ namespace DAL
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
 
-    public partial class ModelsMapping : DbContext
+    public partial class ORM : DbContext
     {
-        public ModelsMapping()
-            : base("name=ModelsMapping")
+        public ORM()
+            : base("name=ORM")
         {
         }
 

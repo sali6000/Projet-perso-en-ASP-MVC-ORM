@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DAL.informatique>
+﻿@model IEnumerable<DTO.informatique>
 
 @{
     ViewBag.Title = "Index";
@@ -29,5 +29,10 @@
         </td>
     </tr>
 }
-
 </table>
+<div id="logo">
+    @foreach (var item in Model)
+    {
+        @Html.DisplayFor(modelItem => item.id_mot_cle);
+    }
+</div>

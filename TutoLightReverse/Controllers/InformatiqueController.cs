@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Linq;
-using DAL;
-using System.Data.Entity;
-using System.Configuration;
+using System.Data.SqlClient;
+using TutoLightReverse.Models;
+using BLL;
 
 namespace TutoLightReverse.Controllers
 {
@@ -14,8 +14,7 @@ namespace TutoLightReverse.Controllers
         // GET: Informatique
         public ActionResult Index()
         {
-            var dbcontext = new ModelsMapping();
-            return View(dbcontext.informatique);
+            return View(InformatiqueManager.GetList());
         }
 
         // GET: Informatique/Details/5
