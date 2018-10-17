@@ -1,38 +1,40 @@
 ﻿@model IEnumerable<DTO.informatique>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Informatique";
 }
 
-<h2>Index</h2>
+<div align="center"><h2>Section informatique</h2></div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_mot_cle }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_mot_cle }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_mot_cle })
-        </td>
-    </tr>
-}
-</table>
-<div id="logo">
+
+<div align="center">
     @foreach (var item in Model)
     {
-        @Html.DisplayFor(modelItem => item.id_mot_cle);
+        <div class="flip categories">
+            <img id="redimensionImg" src="~/Pictures/@Html.DisplayFor(modelItem => item.img)" />
+            <br>@Html.DisplayFor(modelItem => item.id_mot_cle)
+            <br>@Html.DisplayFor(modelItem => item.description)
+        </div>
+        <div class="panel">@Html.DisplayFor(modelItem => item.description_precise)</div>
     }
 </div>
+
+
+<script>
+    $(".panel").hide();
+    $(document).ready(function () {
+        $(".flip").click(function () {
+            if ($(this).next(".panel").is(":visible")) {
+                $(".panel").slideUp("slow");
+                $(".flip").delay(1000).show("slow");
+            }
+            else {
+                $(".panel").hide();
+                $(".flip").hide();
+                $(this).show();
+                $(this).next(".panel").slideDown("slow");
+            }
+    });
+});
+</script>

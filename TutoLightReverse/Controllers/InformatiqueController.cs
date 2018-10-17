@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
-using TutoLightReverse.Models;
 using BLL;
 
 namespace TutoLightReverse.Controllers

@@ -6,3 +6,23 @@
     height: 10%;
     background-color: red;
 }
+
+.flip {
+    padding: 5px;
+    text-align: center;
+    border: solid 1px #c3c3c3;
+    display: inline-block;
+
+}
+
+.panel {
+    background-color: mediumseagreen;
+}
+
+#redimensionImg {
+    height: auto;
+    width: auto;
+    max-height: 150px;
+    max-width: 150px;
+    padding: 10% 10%;
+}

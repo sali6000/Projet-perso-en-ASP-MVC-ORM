@@ -15,5 +15,12 @@ namespace DTO
         [Required]
         [StringLength(500)]
         public string description { get; set; }
+
+        [StringLength(255)]
+        public string img { get; set; }
+
+        [Required]
+        [StringLength(500)]
+        public string description_precise { get; set; }
     }
 }
